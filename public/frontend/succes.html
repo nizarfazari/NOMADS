@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libraries/xzoom/dist/xzoom.css">
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="libraries/gijgo-master/dist/combined/css/gijgo.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+    <div class="container">
+        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+           <div class="navbar-nav ml-auto mr-auto mr-sm-auto mr-lg-0 mr-md-auto">
+               <a href="index1.html" class="navbar-brand">
+                   <img src="images/logo_nomads.png" alt="">
+               </a>
+           </div>
+           <ul class="navbar-nav mr-auto d-none d-lg-block">
+               <li>
+                   <span class="text-muted">
+                       | &nbsp; Beyond the explorer of the world 
+                   </span>
+               </li>
+           </ul>
+        </nav>
+    </div>
+    
+    <main>
+        <div class="section-success d-flex align-items-center">
+            <div class="col text-center">
+                <img src="images/ic_mail.png" alt="">
+                <h1>Yay! Success</h1>
+                <p>We’ve sent you email for trip instruction 
+                    please read it as well</p>
+                <a href="index1.html" class="btn btn-homepage my-3 px-5">Home Page</a>
+            </div>
+        </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="libraries1/jquery-3.6.0.min.js"></script>
+    <script src="libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="libraries/xzoom/dist/xzoom.min.js"></script>
+    <script src="libraries/gijgo-master/dist/combined/js/gijgo.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('.xzoom, .xzoom-gallery').xzoom({
+            zoomWidth: 500,
+            title: false,
+            tint: '#333',
+            Xoffset: 15
+          });
+
+          $('.datepicker').datepicker({
+              uiLibrary : 'bootstrap4',
+              icons: {
+                  rightIcon : '<img src="images/ic_doe.png"/>'
+              }
+          });
+        });
+      </script>
+</body>
+</html>
