@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\GalleryController;
+
 Route::get('/detail', 'DetailController@index')
     ->name('detail');
 
@@ -23,15 +26,14 @@ Route::get('/succes', 'CheckoutController@succes')
     ->name('succes');
 
 Route::prefix('admin')
-        ->namespace('Admin')
-        ->middleware(['auth', 'admin'])
-        ->group( function() {
-            Route::get('/', 'DashboardController@index')
+    ->namespace('Admin')
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
+        Route::get('/', 'DashboardController@index')
             ->name('dashboard');
 
-            Route::resource('travel-package', 'TravelPackageController');
-        }); 
+        Route::resource('travel-package', 'TravelPackageController');
+        Route::resource('gallery', 'GalleryController');
+    });
 
 Auth::routes(['verify' => true]);
-
-

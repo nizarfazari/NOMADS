@@ -1,68 +1,43 @@
 @extends('layouts.admin')
 
 @section('content')
-    <!-- Begin Page Content -->
+<!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Edit Packet Travel {{ $item->title }}</h1>
-    </div>  
+    </div>
 
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <div class="card-shadow">
         <div class="card-body">
-            <form action="{{ route('gallery.update', $item->id) }}" method="POST">
+            <form action="{{ route('gallery.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $item->title }}">
+                    <label for="travel_packages_id">Paket Travel</label>
+                    <select name="travel_packages_id" class="form-control">
+                        <option value="{{ $item->travel_packages->id }}">{{ $item->travel_package->title }}</option>
+                        @foreach ($travel_packages as $travel_package)
+                        <option value="{{ $travel_package->id }}">
+                            {{ $travel_package->title }}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="location">Location</label>
-                    <input type="text" class="form-control" name="location" placeholder="Location" value="{{ $item->location }}">
-                </div>
-                <div class="form-group">
-                    <label for="about">About</label>
-                    <textarea name="about" rows="10" class="d-block w-100 form-control">{{ $item->about }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="featured_event">Featured Event</label>
-                    <input type="text" class="form-control" name="featured_event" placeholder="Featured Event" value="{{ $item->featured_event }}">
-                </div>
-                <div class="form-group">
-                    <label for="language">Language</label>
-                    <input type="text" class="form-control" name="language" placeholder="Language" value="{{ $item->language }}">
-                </div>
-                <div class="form-group">
-                    <label for="foods">Foods</label>
-                    <input type="text" class="form-control" name="foods" placeholder="Foods" value="{{ $item->foods }}">
-                </div>
-                <div class="form-group">
-                    <label for="derpature_date">Derpature Date</label>
-                    <input type="date" class="form-control" name="derpature_date" placeholder="Derpature Date" value="{{ $item->derpature_date }}">
-                </div>
-                <div class="form-group">
-                    <label for="duration">Duration</label>
-                    <input type="text" class="form-control" name="duration" placeholder="Duration" value="{{ $item->duration }}">
-                </div>
-                <div class="form-group">
-                    <label for="type">Type</label>
-                    <input type="text" class="form-control" name="type" placeholder="Type" value="{{ $item->type }}">
-                </div>
-                <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="number" class="form-control" name="price" placeholder="Price" value="{{ $item->price }}">
+                    <label for="image">Images</label>
+                    <input type="file" name="image" id="image" placeholder="image" class="form-control">
                 </div>
                 <button class="btn btn-primary btn-block">
                     Ubah
@@ -72,7 +47,7 @@
         </div>
     </div>
 
-    
+
 </div>
 <!-- /.container-fluid -->
 @endsection

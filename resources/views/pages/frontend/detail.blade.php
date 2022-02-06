@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Detail Travel
+Detail Travel
 @endsection
 
 
@@ -32,32 +32,38 @@
                         <p>Republic of Indonesia Raya</p>
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img src="frontend/images/Mask Group 4.png" alt="" class="xzoom" id="xzoom-default" xoriginal="frontend/images/Mask Group 4.png">
+                                <img src="frontend/images/Mask Group 4.png" alt="" class="xzoom" id="xzoom-default"
+                                    xoriginal="frontend/images/Mask Group 4.png">
                             </div>
                             <div class="xzoom-thumbs">
                                 <a href="frontend/images/Mask Group 4.png">
-                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128" xpreview="frontend/images/Mask Group 4.png  ">
+                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128"
+                                        xpreview="frontend/images/Mask Group 4.png  ">
                                 </a>
                                 <a href="frontend/images/Mask Group 4.png">
-                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128" xpreview="frontend/images/Mask Group 4.png  ">
+                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128"
+                                        xpreview="frontend/images/Mask Group 4.png  ">
                                 </a>
                                 <a href="frontend/images/Mask Group 4.png">
-                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128" xpreview="frontend/images/Mask Group 4.png  ">
+                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128"
+                                        xpreview="frontend/images/Mask Group 4.png  ">
                                 </a>
                                 <a href="frontend/images/Mask Group 4.png">
-                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128" xpreview="frontend/images/Mask Group 4.png  ">
+                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128"
+                                        xpreview="frontend/images/Mask Group 4.png  ">
                                 </a>
                                 <a href="frontend/images/Mask Group 4.png">
-                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128" xpreview="frontend/images/Mask Group 4.png  ">
+                                    <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" width="128"
+                                        xpreview="frontend/images/Mask Group 4.png  ">
                                 </a>
                             </div>
                         </div>
                         <h2>Tentang Wisata</h2>
-                        <p>Nusa Penida is an island southeast of Indonesia’s island Bali and a district of Klungkung 
-                            Regency that includes the neighbouring small island of Nusa Lembongan. The Badung 
-                            Strait separates the island and Bali. The interior of Nusa Penida is hilly with a maximum 
+                        <p>Nusa Penida is an island southeast of Indonesia’s island Bali and a district of Klungkung
+                            Regency that includes the neighbouring small island of Nusa Lembongan. The Badung
+                            Strait separates the island and Bali. The interior of Nusa Penida is hilly with a maximum
                             altitude of 524 metres. It is drier than the nearby island of Bali.</p>
-                        <p>Bali and a district of Klungkung Regency that includes the neighbouring small island of 
+                        <p>Bali and a district of Klungkung Regency that includes the neighbouring small island of
                             Nusa Lembongan. The Badung Strait separates the island and Bali.</p>
                         <div class="features row">
                             <div class="col-md-4">
@@ -94,11 +100,11 @@
                     <div class="card card-details card-right">
                         <h2>Members are going</h2>
                         <div class="members my-2">
-                           <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
-                           <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
-                           <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
-                           <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
-                           <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
+                            <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
+                            <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
+                            <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
+                            <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
+                            <img src="frontend/images/Mask Group 3.png" alt="" class="member-image mr-1">
                         </div>
                         <hr>
                         <h2>Trip Information</h2>
@@ -107,17 +113,17 @@
                                 <th width="50%">Date of Depature</th>
                                 <td width="50%" class="text-right">22 Aug,2019</td>
                             </tr>
-                            
+
                             <tr>
                                 <th width="50%">Date of Depature</th>
                                 <td width="50%" class="text-right">22 Aug,2019</td>
                             </tr>
-                            
+
                             <tr>
                                 <th width="50%">Date of Depature</th>
                                 <td width="50%" class="text-right">22 Aug,2019</td>
                             </tr>
-                            
+
                             <tr>
                                 <th width="50%">Date of Depature</th>
                                 <td width="50%" class="text-right">22 Aug,2019</td>
@@ -125,7 +131,7 @@
                         </table>
                     </div>
                     <div class="join-container">
-                        <a href="" class="btn btn-block btn-join mt-3 py-2">Join Now</a>
+                        <a href="{{ route('checkout') }}" class="btn btn-block btn-join mt-3 py-2">Join Now</a>
                     </div>
                 </div>
             </div>
@@ -138,7 +144,7 @@
 @push('addon-style')
 <script src="{{ url('frontend/libraries/xzoom/dist/xzoom.min.js') }}"></script>
 @endpush
-    
+
 
 @push('addon-script')
 <script src="frontend/libraries/xzoom/dist/xzoom.min.js"></script>
@@ -151,6 +157,5 @@
         Xoffset: 15
       });
     });
-  </script>
+</script>
 @endpush
-

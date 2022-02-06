@@ -22,7 +22,7 @@ class TravelPackageController extends Controller
         return view('pages.admin.travel-package.index', [
             'items' => $items
         ]);
-    } 
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -43,11 +43,11 @@ class TravelPackageController extends Controller
     public function store(TravelPackageRequest $request)
     {
         $data = $request->all();
+        //digunakan untuk mengkonversi title ke bentuk slug
         $data['slug'] = Str::slug($request->title);
 
         TravelPackage::create($data);
         return redirect()->route('travel-package.index');
-        
     }
 
     /**
@@ -71,7 +71,7 @@ class TravelPackageController extends Controller
     {
         $item = TravelPackage::findorfail($id);
 
-        return view('pages.admin.travel-package.update', [
+        return view('pages.admin.travel-package.edit', [
             'item' => $item
         ]);
     }
@@ -83,13 +83,12 @@ class TravelPackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TravelPackageRequest $request, $id)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
         $item = TravelPackage::findorfail($id);
-
         $item->update($data);
 
         return redirect()->route('travel-package.index');
@@ -107,6 +106,5 @@ class TravelPackageController extends Controller
         $item->delete();
 
         return redirect()->route('travel-package.index');
-            
     }
 }

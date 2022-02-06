@@ -13,11 +13,10 @@ class Gallery extends Model
         'travel_packages_id', 'image'
     ];
 
-    protected $hidden = [
+    protected $hidden = [];
 
-    ];
-
-    public function travel_package(){
+    public function travel_package()
+    {
         return $this->belongsTo(TravelPackage::class, 'travel_packages_id', 'id');
     }
 }
