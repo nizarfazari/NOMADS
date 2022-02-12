@@ -13,17 +13,32 @@
 
 use App\Http\Controllers\GalleryController;
 
-Route::get('/detail', 'DetailController@index')
+Route::get('/detail/{slug}', 'DetailController@index')
     ->name('detail');
 
 Route::get('/', 'HomeController@index')
     ->name('home');
 
-Route::get('/checkout', 'CheckoutController@index')
-    ->name('checkout');
+Route::post('/checkout/{id}', 'CheckoutController@process')
+    ->name('checkout-process')
+    //jika ingin menambah verifikasi email 'verified' di dalam middleware
+    ->middleware(['auth']);
 
-Route::get('/succes', 'CheckoutController@succes')
-    ->name('succes');
+Route::get('/checkout/{id}', 'CheckoutController@index')
+    ->name('checkout')
+    ->middleware(['auth']);
+
+Route::post('/checkout/create/{detail_id}', 'CheckoutController@create')
+    ->name('checkout-create')
+    ->middleware(['auth']);
+
+Route::get('/checkout/create/{detail_id}', 'CheckoutController@remove')
+    ->name('checkout_remove')
+    ->middleware(['auth']);
+
+Route::get('/checkout/confirm/{id}', 'CheckoutController@succes')
+    ->name('checkout-success')
+    ->middleware(['auth']);
 
 Route::prefix('admin')
     ->namespace('Admin')
